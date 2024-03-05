@@ -3,25 +3,21 @@
 <!-- body.html is optional; elements will be added to your html body after app.js is loaded. -->
 
 <!-- Add the tap-place component to the scene so it has an effect -->
-<a-scene
-  landing-page
-  xrextras-loading
-  xrextras-runtime-error
+<a-scene 
+  landing-page 
+  xrextras-loading 
+  xrextras-runtime-error 
   renderer="colorManagement: true"
-  xrweb="cameraDirection: back; allowedDevices: any">
+  xrweb="cameraDirection: back; allowedDevices: any"
+>
   <!-- The raycaster will emit mouse events on scene objects specified with the cantap class -->
   <a-camera id="camera" position="0 1.6 0"> </a-camera>
 
-  <a-ring
-    tap-place-cursor
-    rotation="-90 0 0"
-    material="shader: flat; color: #5AC8FA"
-    radius-inner="0.25"
+  <a-ring tap-place-cursor rotation="-90 0 0" material="shader: flat; color: #5AC8FA" radius-inner="0.25"
     radius-outer="0.4">
   </a-ring>
 
-  <a-entity
-    light="
+  <a-entity light="
       type: directional;
       intensity: 0.8;
       castShadow: true;
@@ -31,40 +27,25 @@
       shadowCameraBottom: -20;
       shadowCameraRight: 20;
       shadowCameraLeft: -20;
-      target: #volo"
-    xrextras-attach="target: volo; offset: 8 15 4"
-    position="1 4.3 2.5"
-    shadow>
+      target: #volo" xrextras-attach="target: volo; offset: 8 15 4" position="1 4.3 2.5" shadow>
   </a-entity>
 
   <a-light type="ambient" intensity="0.5"></a-light>
 
   <!-- Adding the cantap class allows the ground to be clicked -->
-  <a-plane
-    id="ground"
-    material="shader: shadow"
-    rotation="-90 0 0"
-    width="100"
-    height="100"
-    shadow="cast: false">
+  <a-plane id="ground" material="shader: shadow" rotation="-90 0 0" width="100" height="100" shadow="cast: false">
   </a-plane>
 
-  <a-text
-    id="progress-text"
-    position="0 0.15 0"
-    align="center"
-    width="3"
-    height="3"
-    color="white"
+  <a-text id="progress-text" position="0 0.15 0" align="center" width="3" height="3" color="white"
     value="Tap to download and place vologram">
   </a-text>
 
-  <vologram-player
-    id="volo"
-    src="https://d2zojjwx7nw6o2.cloudfront.net/vms-volograms/volograms/jan_ld_1024_ETC1S_BASIS_mp3.vols"
+  <vologram-player id="volo"
+    src="https://d2zojjwx7nw6o2.cloudfront.net/vms-volograms/volograms/jan_ld_1024_ETC1S_BASIS_mp3.vols" 
     size="1"
-    play="true"
-    loop="true"
-    mesh-position="0 -0.05 0">
+    play="true" 
+    loop="true" 
+    mesh-position="0 -0.05 0" 
+    muted="false">
   </vologram-player>
 </a-scene>
